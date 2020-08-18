@@ -25,9 +25,9 @@ void prenderSemaforo(int *s)
 void loop()
 {
   // Un estado del semaforo es un array rojo,amarillo,verde
-  int estado1[4] = {1, 0, 0, 2000};
-  int estado2[4] = {0, 0, 1, 2000};
-  int estado3[4] = {0, 1, 0, 800};
+  int estado1[4] = {HIGH, LOW, LOW, 2000};
+  int estado2[4] = {LOW, LOW, HIGH, 2000};
+  int estado3[4] = {LOW, HIGH, LOW, 800};
  
   prenderSemaforo(estado1);
   
