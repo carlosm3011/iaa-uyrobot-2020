@@ -1,0 +1,38 @@
+#define PIN_ROJO 13
+#define PIN_VERDE 8
+#define PIN_AMA 12
+
+void setup()
+{
+  pinMode(PIN_ROJO, OUTPUT);
+  pinMode(PIN_VERDE, OUTPUT);
+  pinMode(PIN_AMA, OUTPUT);
+}
+
+void prenderSemaforo(int *s)
+{
+  digitalWrite(PIN_ROJO, LOW);
+  digitalWrite(PIN_AMA, LOW);
+  digitalWrite(PIN_VERDE, LOW);
+  
+  digitalWrite(PIN_ROJO, s[0]);
+  digitalWrite(PIN_AMA, s[1]);
+  digitalWrite(PIN_VERDE, s[2]);
+  
+  delay(s[3]);
+}
+
+void loop()
+{
+  // Un estado del semaforo es un array rojo,amarillo,verde
+  int estado1[4] = {1, 0, 0, 2000};
+  int estado2[4] = {0, 0, 1, 2000};
+  int estado3[4] = {0, 1, 0, 800};
+ 
+  prenderSemaforo(estado1);
+  
+  prenderSemaforo(estado2);
+  
+  prenderSemaforo(estado3);
+  
+}
