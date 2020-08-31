@@ -1,8 +1,15 @@
 int botonR = 0;
-
 int botonB = 0;
-
 int botonG = 0;
+
+int pinB = 0;
+int pinG = 0;
+int pinR = 0;
+
+int pinBotonR = 0;
+int pinBotong = 0;
+int pinBotonB = 0;
+
 
 void setup()
 {
@@ -16,28 +23,38 @@ void setup()
 
 void loop()
 {
-  digitalWrite(9, LOW);
-  digitalWrite(10, LOW);
-  digitalWrite(11, LOW);
+  // Estado inicial
+  pinB = 10;
+  pinG = 9;
+  pinR = 11;
+  
+  pinBotonR = 7;
+  pinBotonB = 6;
+  pinBotonG = 5;
+
+  digitalWrite(pinB, LOW);
+  digitalWrite(pinR, LOW);
+  digitalWrite(pinG, LOW);
+  
   while (1 == 1) {
-    botonR = digitalRead(7);
+    botonR = digitalRead(pinBotonR);
     if (botonR == 1) {
-      digitalWrite(11, HIGH);
+      digitalWrite(pinR, HIGH);
     } else {
-      digitalWrite(11, LOW);
+      digitalWrite(pinR, LOW);
     }
-    botonB = digitalRead(6);
+    botonB = digitalRead(pinBotonB);
     if (botonB == 1) {
-      digitalWrite(10, HIGH);
+      digitalWrite(pinB, HIGH);
     } else {
-      digitalWrite(10, LOW);
+      digitalWrite(pinB, LOW);
     }
     delay(500); // Wait for 500 millisecond(s)
-    botonG = digitalRead(5);
+    botonG = digitalRead(pinBotonG);
     if (botonG == 1) {
-      digitalWrite(9, HIGH);
+      digitalWrite(pinG, HIGH);
     } else {
-      digitalWrite(9, LOW);
+      digitalWrite(pinG, LOW);
     }
     delay(500); // Wait for 500 millisecond(s)
   }
