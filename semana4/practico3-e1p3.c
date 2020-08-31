@@ -41,6 +41,9 @@ void loop()
 
   }
   
+  digitalWrite(9, HIGH);
+  digitalWrite(10, HIGH);
+  digitalWrite(11, HIGH);  
   delay(2000);
   
 }
