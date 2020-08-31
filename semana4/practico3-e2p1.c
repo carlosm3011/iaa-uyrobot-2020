@@ -7,7 +7,7 @@ int pinG = 0;
 int pinR = 0;
 
 int pinBotonR = 0;
-int pinBotong = 0;
+int pinBotonG = 0;
 int pinBotonB = 0;
 
 
