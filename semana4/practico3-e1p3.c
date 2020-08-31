@@ -29,9 +29,9 @@ void loop()
   digitalWrite(11, LOW);
   
   for (counter = 0; counter < 10; ++counter) {
-    randomStateR = random(0, 255 + 1);
-    randomStateG = random(0, 255 + 1);
-    randomStateB = random(0, 255 + 1);
+    randomStateR = random(pinR, 255 + 1);
+    randomStateG = random(pinG, 255 + 1);
+    randomStateB = random(pinB, 255 + 1);
     analogWrite(9, randomStateG);
     analogWrite(10, randomStateB);
     analogWrite(11, randomStateR);
@@ -40,5 +40,7 @@ void loop()
     delay(randomDelay); // Wait for 1000 millisecond(s)
 
   }
+  
+  delay(2000);
   
 }
